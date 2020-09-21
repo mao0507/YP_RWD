@@ -1,0 +1,90 @@
+.nav {
+    /* margin-top: 30px; */
+    border: solid #a97c52 1px;
+}
+
+.nav-ul {
+    display: flex;
+    justify-content: center;
+}
+.nav-ul li a {
+    width: 118px;
+    height: 151px;
+}
+.a1 {
+    width: 118px;
+    height: 151px;
+    background-image: url(/images/iconA_01.png);
+}
+.a1:hover {
+    background-image: url(/images/iconB_01.png);
+}
+.active .a1 {
+    background-image: url(/images/iconB_01.png);
+}
+.a2 {
+    width: 112px;
+    height: 151px;
+    background-image: url(/images/iconA_02.png);
+}
+.a2:hover {
+    background-image: url(/images/iconB_02.png);
+}
+.active .a2 {
+    background-image: url(/images/iconB_02.png);
+}
+.a3 {
+    width: 112px;
+    height: 151px;
+    background-image: url(/images/iconA_03.png);
+}
+.a3:hover {
+    background-image: url(/images/iconB_03.png);
+}
+.active .a3 {
+    background-image: url(/images/iconB_03.png);
+}
+.a4 {
+    width: 112px;
+    height: 151px;
+    background-image: url(/images/iconA_04.png);
+}
+.a4:hover {
+    background-image: url(/images/iconB_04.png);
+}
+.active .a4 {
+    background-image: url(/images/iconB_04.png);
+}
+.a5 {
+    width: 112px;
+    height: 151px;
+    background-image: url(/images/iconA_05.png);
+}
+.a5:hover {
+    background-image: url(/images/iconB_05.png);
+}
+.active .a5 {
+    background-image: url(/images/iconB_05.png);
+}
+.a6 {
+    width: 112px;
+    height: 151px;
+    background-image: url(/images/iconA_06.png);
+}
+.a6:hover {
+    background-image: url(/images/iconB_06.png);
+}
+.active .a6 {
+    background-image: url(/images/iconB_06.png);
+}
+.a7 {
+    width: 112px;
+    height: 151px;
+    background-image: url(/images/iconA_07.png);
+}
+.a7:hover {
+    background-image: url(/images/iconB_07.png);
+}
+.active .a7 {
+    background-image: url(/images/iconB_07.png);
+}
