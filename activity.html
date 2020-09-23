@@ -24,10 +24,10 @@
             <div class="bg br drop-shadow">
                 <div class="d-flex justify-content-between flex-wrap">
                     <a href="javascript:void(0)">
-                        <img src="images/iconB_01.png" alt="news">
+                        <img src="images/iconA_01.png" alt="news">
                     </a>
                     <a href="javascript:void(0)">
-                        <img src="images/iconA_02.png" alt="activity">
+                        <img src="images/iconB_02.png" alt="activity">
                     </a>
                     <a href="javascript:void(0)">
                         <img src="images/iconA_03.png" alt="register">
@@ -45,8 +45,13 @@
                         <img src="images/iconA_07.png" alt="login">
                     </a>
                 </div>
+
                 <table class="table table-hover table-striped">
-                    <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/1.png" alt="news">
+
+                    <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/2.png" alt="news">
+                    <div class="d-flex justify-content-center mb-4">
+                        <a href="javascript:void(0)" class="btn btn-success" v-on:click="open('search')">搜尋</a>
+                    </div>
                     <thead class="text-center">
                         <tr>
                             <th scope="col">日期</th>
@@ -151,6 +156,56 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" v-on:click="close()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal-Search -->
+        <div class="modal fade " id="myModal2" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="ModalCenterTitle">查詢條件</h6>
+                        <button type="button" class="close" aria-label="Close" v-on:click="close('search')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="area">區域</label>
+                            </div>
+                            <select class="custom-select" id="area">
+                                <option v-for="item in area" v-bind:value="item.value">{{item.text}}</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SchoolSystem">學制</label>
+                            </div>
+                            <select class="custom-select" id="SchoolSystem">
+                                <option v-for="item in SchoolSystem" v-bind:value="item.value">{{item.text}}</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SchoolName">學制</label>
+                            </div>
+                            <select class="custom-select" id="SchoolName">
+                                <option v-for="item in SchoolName" v-bind:value="item.value">{{item.text}}</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="txtShcoolName">學校名稱</label>
+                            </div>
+                            <input type="text" class="form-control" placeholder="請輸入學校名稱" id="txtShcoolName"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" v-on:click="close('search')">Close</button>
                     </div>
                 </div>
             </div>
