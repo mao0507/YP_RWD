@@ -56,7 +56,6 @@ var vm = new Vue({
     },
     created() {
         //this.test();
-        //this.open();
     },
     methods: {
         open(btn) {
