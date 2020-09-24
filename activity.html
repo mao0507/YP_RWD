@@ -9,10 +9,18 @@
     <link rel="stylesheet" href="css/custom.css">
     <script src="js/jquery/jquery.min.js"></script>
     <script src="bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+    <!-- datepicker -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
     <!-- <script src="js/vue/vue.min.js"></script> -->
     <script src="js/vue/vue.js"></script>
     <script src="js/custom.js" defer="defer"></script>
-    <title>index</title>
+    <title>活動查看</title>
 </head>
 
 <body>
@@ -21,29 +29,32 @@
             <div class="py-5 text-center">
                 <img class="d-block mx-auto img-fluid drop-shadow" src="images2/banner.gif">
             </div>
-            <div class="bg br drop-shadow">
+            <div class="bg br drop-shadow ">
                 <div class="d-flex justify-content-between flex-wrap">
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_01.png" alt="news">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('news')" @mouseout="mouseOut('news')" @click="url('news')">
+                        <img src="images/iconA_01.png" alt="news" id="news">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconB_02.png" alt="activity">
+                    <a href="javascript:void(0)" @click="url('activity')">
+                        <img src="images/iconB_02.png" alt="activity" id="activity">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_03.png" alt="register">
+                   
+                    <a href="javascript:void(0)" @mouseover="mouseOver('contactus')" @mouseout="mouseOut('contactus')" @click="url('contactus')">
+                        <img src="images/iconA_04.png" alt="contactus" id="contactus">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_04.png" alt="contactus">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')" @click="url('question')">
+                        <img src="images/iconA_05.png" alt="question" id="question">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_05.png" alt="question">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')" @click="url('download')">
+                        <img src="images/iconA_06.png" alt="download" id="download">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_06.png" alt="download">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('register')" @mouseout="mouseOut('register')"
+                        @click="url('register')">
+                        <img src="images/iconA_03.png" alt="register" id="register">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_07.png" alt="login">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('login')" @mouseout="mouseOut('login')" @click="url('login')">
+                        <img src="images/iconA_07.png" alt="login" id="login">
                     </a>
+                    <span class="border-b w-100"></span>
                 </div>
 
                 <table class="table table-hover table-striped">
@@ -54,13 +65,17 @@
                     </div>
                     <thead class="text-center">
                         <tr>
-                            <th scope="col">日期</th>
-                            <th scope="col">標題</th>
+                            <th scope="col">序號</th>
+                            <th scope="col">學校</th>
+                            <th scope="col">活動時間</th>
+                            <th scope="col">活動名稱</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
                         <tr>
-                            <th scope="row">2020/07/21</th>
+                            <td>1</td>
+                            <td>潭子國小</td>
+                            <td>109/07/13 10:30 ~ 109/07/13 12:00</td>
                             <td>
                                 <a href="javascript:void(0)" v-on:click="open()" class="search-pop">
                                     本府各局處舉辦之活動已公布下載區，請參閱運用
@@ -68,47 +83,55 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">2020/07/22</th>
+                            <td>2</td>
+                            <td>潭子國小</td>
+                            <td>109/07/13 10:30 ~ 109/07/13 12:00</td>
                             <td>
-                                <a href="javascript:void(0)" v-on:click="open()">
+                                <a href="javascript:void(0)" v-on:click="open()" class="search-pop">
                                     本府各局處舉辦之活動已公布下載區，請參閱運用
                                 </a>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">2020/07/23</th>
+                            <td>3</td>
+                            <td>潭子國小</td>
+                            <td>109/07/13 10:30 ~ 109/07/13 12:00</td>
                             <td>
-                                <a href="javascript:void(0)" v-on:click="open()">
+                                <a href="javascript:void(0)" v-on:click="open()" class="search-pop">
                                     本府各局處舉辦之活動已公布下載區，請參閱運用
                                 </a>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">2020/07/24</th>
+                            <td>4</td>
+                            <td>潭子國小</td>
+                            <td>109/07/13 10:30 ~ 109/07/13 12:00</td>
                             <td>
-                                <a href="javascript:void(0)" v-on:click="open()">
+                                <a href="javascript:void(0)" v-on:click="open()" class="search-pop">
                                     本府各局處舉辦之活動已公布下載區，請參閱運用
                                 </a>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2020/07/25</th>
-                            <td>
-                                <a href="javascript:void(0)" v-on:click="open()">
-                                    本府各局處舉辦之活動已公布下載區，請參閱運用
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2020/07/26</th>
-                            <td>
-                                <a href="javascript:void(0)" v-on:click="open()">
-                                    本府各局處舉辦之活動已公布下載區，請參閱運用
-                                </a>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
+                <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-5">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
 
@@ -136,20 +159,36 @@
                         <table class="table table-hover table-striped mb-2 mt-2">
                             <tbody class="text-center">
                                 <tr>
-                                    <th>發布單位 :</th>
-                                    <td>臺中市政府教育局</td>
+                                    <th>序號 :</th>
+                                    <td>1</td>
                                 </tr>
                                 <tr>
-                                    <th>發布日期 :</th>
-                                    <td>2020/07/21</td>
+                                    <th>區域 :</th>
+                                    <td>潭子區</td>
                                 </tr>
                                 <tr>
-                                    <th>發布內容 :</th>
-                                    <td>本府各局處舉辦之活動已公布下載區，請參閱運用</td>
+                                    <th>學校 :</th>
+                                    <td>潭子國小</td>
                                 </tr>
                                 <tr>
-                                    <th>附件檔 :</th>
-                                    <td>假的.txt</td>
+                                    <th>活動名稱 :</th>
+                                    <td>人生最大的價值是什麼？</td>
+                                </tr>
+                                <tr>
+                                    <th>活動日期 :</th>
+                                    <td>109/07/13 10:30 ~ 109/07/13 12:00</td>
+                                </tr>
+                                <tr>
+                                    <th>限定校內人士 :</th>
+                                    <td>是</td>
+                                </tr>
+                                <tr>
+                                    <th>承辦人 :</th>
+                                    <td>黃琇雅</td>
+                                </tr>
+                                <tr>
+                                    <th>承辦人電話 :</th>
+                                    <td>25324610#247</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -203,14 +242,34 @@
                             <input type="text" class="form-control" placeholder="請輸入學校名稱" id="txtShcoolName"
                                 aria-describedby="basic-addon1">
                         </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="kind">活動類型</label>
+                            </div>
+                            <select class=" custom-select" id="kind">
+                                    <option v-for="item in kind" v-bind:value="item.value">{{item.text}}</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="Startdate">活動開始日期</label>
+                            </div>
+                            <input type="date" class="form-control" placeholder="活動開始日期" id="Startdate" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="Enddate">活動結束日期</label>
+                        </div>
+                        <input type="date" class="form-control" placeholder="活動結束日期" id="Enddate" aria-describedby="basic-addon1">
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" v-on:click="close('search')">Close</button>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-success" v-on:click="close('search')">搜尋</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 </body>
 

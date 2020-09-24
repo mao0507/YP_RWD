@@ -28,3 +28,10 @@ body{
 .drop-shadow {
     filter: drop-shadow(12px 12px 7px rgba(41, 41, 41, 0.5))
 }
+.red-star{
+    color: red;
+    margin-right: 5px;
+}
+.border-b{
+    border-bottom: 2px solid #dee2e6;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/CSSreset.css">
+    <link rel="stylesheet" href="bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+    <script src="js/vue/vue.js"></script>
+    <script src="js/custom.js" defer="defer"></script>
+    <title>登入系統</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto img-fluid drop-shadow" src="images2/banner.gif">
+            </div>
+            <div class="bg br drop-shadow border-bottom">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('news')" @mouseout="mouseOut('news')"
+                        @click="url('news')">
+                        <img src="images/iconA_01.png" alt="news" id="news">
+                    </a>
+                    <a href="javascript:void(0)" @mouseover="mouseOver('activity')" @mouseout="mouseOut('activity')"
+                        @click="url('activity')">
+                        <img src="images/iconA_02.png" alt="activity" id="activity">
+                    </a>
+                    <a href="javascript:void(0)" @mouseover="mouseOver('contactus')" @mouseout="mouseOut('contactus')"
+                        @click="url('contactus')">
+                        <img src="images/iconA_04.png" alt="contactus" id="contactus">
+                    </a>
+                    <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')"
+                        @click="url('question')">
+                        <img src="images/iconA_05.png" alt="question" id="question">
+                    </a>
+                    <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')"
+                        @click="url('download')">
+                        <img src="images/iconA_06.png" alt="download" id="download">
+                    </a>
+                    <a href="javascript:void(0)" @mouseover="mouseOver('register')" @mouseout="mouseOut('register')"
+                        @click="url('register')">
+                        <img src="images/iconA_03.png" alt="register" id="register">
+                    </a>
+                    <a href="javascript:void(0)" @click="url('login')">
+                        <img src="images/iconB_07.png" alt="login" id="login">
+                    </a>
+                    <span class="border-b w-100"></span>
+                </div>
+
+                <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/7.png" alt="news">
+
+                <form class="form-signin w-50 mx-auto mt-4">
+                    <div class="form-label-group mb-5">
+                        <h4 class="mb-3"><span class="red-star">*</span>帳號</h4>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="請輸入帳號" required autofocus>
+                    </div>
+                    <div class="form-label-group mb-5">
+                        <h4 class="mb-3"><span class="red-star">*</span>密碼</h4>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="請輸入密碼" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <h4 class="mb-3"><span class="red-star">*</span>身分選擇</h4>
+                            <select class="custom-select d-block w-100" id="country" required>
+                                <option value="school">學校</option>
+                                <option value="center">中心</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-lg btn-primary btn-block mt-4" type="submit"
+                        style="background-color:#1EA7C2 ; border-color:#1EA7C2;">登入</button>
+                    <a class="mt-5" href="javascript:void(0)" v-on:click="url('register')">沒有帳號嗎? 點我註冊</a>
+                </form>
+            </div>
+
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">&copy; Mao</p>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

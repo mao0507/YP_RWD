@@ -12,7 +12,7 @@
     <!-- <script src="js/vue/vue.min.js"></script> -->
     <script src="js/vue/vue.js"></script>
     <script src="js/custom.js" defer="defer"></script>
-    <title>index</title>
+    <title>臺中市政府教育局-青春專案</title>
 </head>
 
 <body>
@@ -21,31 +21,34 @@
             <div class="py-5 text-center">
                 <img class="d-block mx-auto img-fluid drop-shadow" src="images2/banner.gif">
             </div>
-            <div class="bg br drop-shadow">
+            <div class="bg br drop-shadow " >
                 <div class="d-flex justify-content-between flex-wrap">
-                    <a href="javascript:void(0)">
-                        <img src="images/iconB_01.png" alt="news">
+                    <a href="javascript:void(0)" >
+                        <img src="images/iconB_01.png" alt="news" id="news" @click="url('news')">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_02.png" alt="activity">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('activity')" @mouseout="mouseOut('activity')" @click="url('activity')">
+                        <img src="images/iconA_02.png" alt="activity" id="activity">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_03.png" alt="register">
+                    
+                    <a href="javascript:void(0)" @mouseover="mouseOver('contactus')" @mouseout="mouseOut('contactus')" @click="url('contactus')">
+                        <img src="images/iconA_04.png" alt="contactus" id="contactus">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_04.png" alt="contactus">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')" @click="url('question')">
+                        <img src="images/iconA_05.png" alt="question" id="question">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_05.png" alt="question">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')" @click="url('download')">
+                        <img src="images/iconA_06.png" alt="download" id="download">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_06.png" alt="download">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('register')" @mouseout="mouseOut('register')"
+                        @click="url('register')">
+                        <img src="images/iconA_03.png" alt="register" id="register">
                     </a>
-                    <a href="javascript:void(0)">
-                        <img src="images/iconA_07.png" alt="login">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('login')" @mouseout="mouseOut('login')" @click="url('login')">
+                        <img src="images/iconA_07.png" alt="login" id="login">
                     </a>
+                    <span class="border-b w-100"></span>
                 </div>
-                <table class="table table-hover table-striped">
+                <table class="table table-hover table-striped ">
                     <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/1.png" alt="news">
                     <thead class="text-center">
                         <tr>
@@ -104,16 +107,29 @@
                         </tr>
                     </tbody>
                 </table>
+                <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-5">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
 
             <footer class="my-5 pt-5 text-muted text-center text-small">
                 <p class="mb-1">&copy; Mao</p>
-                <!-- <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Privacy</a></li>
-                    <li class="list-inline-item"><a href="#">Terms</a></li>
-                    <li class="list-inline-item"><a href="#">Support</a></li>
-                </ul> -->
+              
             </footer>
         </div>
         <!-- Modal -->
