@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/CSSreset.css">
+  <link rel="stylesheet" href="bootstrap-4.2.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+  <!-- <script src="js/vue/vue.min.js"></script> -->
+  <script src="js/vue/vue.js"></script>
+  <script src="js/custom.js" defer="defer"></script>
+  <title>臺中市政府教育局-青春專案</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto img-fluid drop-shadow" src="images2/banner.gif">
+      </div>
+      <div class="bg br drop-shadow ">
+        <div class="d-flex justify-content-between flex-wrap">
+          <a href="javascript:void(0)">
+            <img src="images/iconB_01.png" alt="news" id="news" @click="url('news')">
+          </a>
+          <a href="javascript:void(0)" @mouseover="mouseOver('activity')" @mouseout="mouseOut('activity')"
+            @click="url('activity')">
+            <img src="images/iconA_02.png" alt="activity" id="activity">
+          </a>
+
+          <a href="javascript:void(0)" @mouseover="mouseOver('contactus')" @mouseout="mouseOut('contactus')"
+            @click="url('contactus')">
+            <img src="images/iconA_04.png" alt="contactus" id="contactus">
+          </a>
+          <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')"
+            @click="url('question')">
+            <img src="images/iconA_05.png" alt="question" id="question">
+          </a>
+          <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')"
+            @click="url('download')">
+            <img src="images/iconA_06.png" alt="download" id="download">
+          </a>
+          <a href="javascript:void(0)" @mouseover="mouseOver('register')" @mouseout="mouseOut('register')"
+            @click="url('register')">
+            <img src="images/iconA_03.png" alt="register" id="register">
+          </a>
+          <a href="javascript:void(0)" @mouseover="mouseOver('login')" @mouseout="mouseOut('login')"
+            @click="url('login')">
+            <img src="images/iconA_07.png" alt="login" id="login">
+          </a>
+          <span class="border-b w-100"></span>
+        </div>
+        <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/4.png" alt="news">
+        <div class="row ">
+          <div class="col-md-12 order-md-1">
+            <form class="needs-validation w-75 mx-auto">
+              <div class="mb-3">
+                <h4 class="mb-3"><span class="red-star">*</span>聯絡人</h4>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="ContactPerson" placeholder="請輸入聯絡人" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h4 class="mb-3"><span class="red-star">*</span>電子信箱</h4>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="Email" placeholder="請輸入電子信箱" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h4 class="mb-3"><span class="red-star">*</span>連絡電話</h4>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="tel" placeholder="請輸入連絡電話" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h4 class="mb-3"><span class="red-star">*</span>標題</h4>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="title" placeholder=" 請輸入標題" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h4 class="mb-3"><span class="red-star">*</span>詢問內容</h4>
+                <div class="input-group">
+                  <!-- <input type="text" class="form-control" id="title" placeholder=" 請輸入詢問內容" required> -->
+                  <textarea class="form-control" aria-label="With textarea" placeholder=" 請輸入詢問內容"></textarea>
+                </div>
+              </div>
+              <div class="input-group" id="box">
+                <span class="input-group-addon">圖形驗證碼：</span>
+                <input type="tel" class="form-control" placeholder="請輸入圖形驗證碼
+                " />
+                <span><canvas id="canvas" width="120" height="45"></canvas>
+                  <a href="#" id="changeImg">看不清，換一張?</a></span>
+              </div>
+
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit"
+                style="background-color: #7114db; border-color: #7114db;">送出</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; Mao</p>
+
+      </footer>
+    </div>
+
+  </div>
+
+  <!-- <script>
+    window.onload = function name(params) {
+      drawPic();
+    }
+
+
+
+    /**生成一个随机数**/
+    function randomNum(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+    /**生成一个随机色**/
+    function randomColor(min, max) {
+      var r = randomNum(min, max);
+      var g = randomNum(min, max);
+      var b = randomNum(min, max);
+      return "rgb(" + r + "," + g + "," + b + ")";
+    }
+    drawPic();
+    document.getElementById("changeImg").onclick = function (e) {
+      e.preventDefault();
+      drawPic();
+    }
+
+    /**绘制验证码图片**/
+    function drawPic() {
+      var canvas = document.getElementById("canvas");
+      var width = canvas.width;
+      var height = canvas.height;
+      var ctx = canvas.getContext('2d');
+      ctx.textBaseline = 'bottom';
+
+      /**绘制背景色**/
+      ctx.fillStyle = randomColor(180, 240); //颜色若太深可能导致看不清
+      ctx.fillRect(0, 0, width, height);
+      /**绘制文字**/
+      var str = 'ABCEFGHJKLMNPQRSTWXY123456789';
+      for (var i = 0; i < 4; i++) {
+        var txt = str[randomNum(0, str.length)];
+        ctx.fillStyle = randomColor(50, 160);  //随机生成字体颜色
+        ctx.font = randomNum(15, 40) + 'px SimHei'; //随机生成字体大小
+        var x = 10 + i * 25;
+        var y = randomNum(25, 45);
+        var deg = randomNum(-45, 45);
+        //修改坐标原点和旋转角度
+        ctx.translate(x, y);
+        ctx.rotate(deg * Math.PI / 180);
+        ctx.fillText(txt, 0, 0);
+        //恢复坐标原点和旋转角度
+        ctx.rotate(-deg * Math.PI / 180);
+        ctx.translate(-x, -y);
+      }
+      /**绘制干扰线**/
+      for (var i = 0; i < 8; i++) {
+        ctx.strokeStyle = randomColor(40, 180);
+        ctx.beginPath();
+        ctx.moveTo(randomNum(0, width), randomNum(0, height));
+        ctx.lineTo(randomNum(0, width), randomNum(0, height));
+        ctx.stroke();
+      }
+      /**绘制干扰点**/
+      for (var i = 0; i < 100; i++) {
+        ctx.fillStyle = randomColor(0, 255);
+        ctx.beginPath();
+        ctx.arc(randomNum(0, width), randomNum(0, height), 1, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+    }
+  </script> -->
+
+
+</body>
+
+</html>
