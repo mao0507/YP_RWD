@@ -31,27 +31,32 @@
             </div>
             <div class="bg br drop-shadow ">
                 <div class="d-flex justify-content-between flex-wrap">
-                    <a href="javascript:void(0)" @mouseover="mouseOver('news')" @mouseout="mouseOut('news')" @click="url('news')">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('news')" @mouseout="mouseOut('news')"
+                        @click="url('news')">
                         <img src="images/iconA_01.png" alt="news" id="news">
                     </a>
                     <a href="javascript:void(0)" @click="url('activity')">
                         <img src="images/iconB_02.png" alt="activity" id="activity">
                     </a>
-                   
-                    <a href="javascript:void(0)" @mouseover="mouseOver('contactus')" @mouseout="mouseOut('contactus')" @click="url('contactus')">
+
+                    <a href="javascript:void(0)" @mouseover="mouseOver('contactus')" @mouseout="mouseOut('contactus')"
+                        @click="url('contactus')">
                         <img src="images/iconA_04.png" alt="contactus" id="contactus">
                     </a>
-                    <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')" @click="url('question')">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')"
+                        @click="url('question')">
                         <img src="images/iconA_05.png" alt="question" id="question">
                     </a>
-                    <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')" @click="url('download')">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')"
+                        @click="url('download')">
                         <img src="images/iconA_06.png" alt="download" id="download">
                     </a>
                     <a href="javascript:void(0)" @mouseover="mouseOver('register')" @mouseout="mouseOut('register')"
                         @click="url('register')">
                         <img src="images/iconA_03.png" alt="register" id="register">
                     </a>
-                    <a href="javascript:void(0)" @mouseover="mouseOver('login')" @mouseout="mouseOut('login')" @click="url('login')">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('login')" @mouseout="mouseOut('login')"
+                        @click="url('login')">
                         <img src="images/iconA_07.png" alt="login" id="login">
                     </a>
                     <span class="border-b w-100"></span>
@@ -61,7 +66,7 @@
 
                     <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/2.png" alt="news">
                     <div class="d-flex justify-content-center mb-4">
-                        <a href="javascript:void(0)" class="btn btn-success" v-on:click="open('search')">搜尋</a>
+                        <a href="javascript:void(0)" class="btn btn-success" v-on:click="open('search')">活動查詢</a>
                     </div>
                     <thead class="text-center">
                         <tr>
@@ -112,7 +117,7 @@
                                 </a>
                             </td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
                 <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-5">
@@ -247,29 +252,31 @@
                                 <label class="input-group-text" for="kind">活動類型</label>
                             </div>
                             <select class=" custom-select" id="kind">
-                                    <option v-for="item in kind" v-bind:value="item.value">{{item.text}}</option>
+                                <option v-for="item in kind" v-bind:value="item.value">{{item.text}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="Startdate">活動開始日期</label>
                             </div>
-                            <input type="date" class="form-control" placeholder="活動開始日期" id="Startdate" aria-describedby="basic-addon1">
+                            <input type="date" class="form-control" placeholder="活動開始日期" id="Startdate"
+                                aria-describedby="basic-addon1">
                         </div>
                         <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="Enddate">活動結束日期</label>
-                        </div>
-                        <input type="date" class="form-control" placeholder="活動結束日期" id="Enddate" aria-describedby="basic-addon1">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="Enddate">活動結束日期</label>
+                            </div>
+                            <input type="date" class="form-control" placeholder="活動結束日期" id="Enddate"
+                                aria-describedby="basic-addon1">
                         </div>
                     </div>
-                        <div class="modal-footer justify-content-center">
-                            <button type="button" class="btn btn-success" v-on:click="close('search')">搜尋</button>
-                        </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-success" v-on:click="close('search')">搜尋</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 </body>
 
