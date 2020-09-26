@@ -35,7 +35,8 @@
                         @click="url('news')">
                         <img src="images/iconA_01.png" alt="news" id="news">
                     </a>
-                    <a href="javascript:void(0)" @click="url('activity')">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('activity')" @mouseout="mouseOut('activity')"
+                        @click="url('activity')">
                         <img src="images/iconB_02.png" alt="activity" id="activity">
                     </a>
 

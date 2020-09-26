@@ -90,14 +90,14 @@
                             <div class="mb-3">
                                 <h4 class="mb-3"><span class="red-star">*</span>電話(手機)</h4>
                                 <div class="input-group">
-                                    
+
                                     <input type="text" class="form-control" id="phone" placeholder="請輸入電話(手機)" required>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <h4 class="mb-3">電話(分機)</h4>
                                 <div class="input-group">
-                                    
+
                                     <input type="text" class="form-control" id="tel" placeholder="請輸入電話(分機)" required>
                                 </div>
                             </div>
@@ -122,6 +122,15 @@
                                     <select class="custom-select d-block w-100" id="state" required>
                                         <option value="">請選擇...</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h4 class="mb-3"><span class="red-star">*</span>圖形驗證碼：</h4>
+                                <div class="input-group" id="box">
+                                    <input type="tel" class="form-control" placeholder="請輸入圖形驗證碼
+                                                            " />
+                                    <span><canvas id="canvas" width="120" height="45"></canvas>
+                                        <a href="javascript:void(0)" id="changeImg" @click="changeImg()">換一張?</a></span>
                                 </div>
                             </div>
                             <hr class="mb-4">

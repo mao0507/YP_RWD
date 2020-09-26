@@ -58,14 +58,31 @@ var vm = new Vue({
         ],
         //驗證碼
         chk: "",
+        txtchk: "",
+        //現在網址
+        nowUrl: window.location.href,
+        //常見問題
+        questions: [
+            { title: "帳號無法登入", titleID: "q1", show: true, text: "1.原因可能是密碼輸入錯誤。<br>2.驗證碼輸入錯誤。<br>3.貴校管理者尚未將您的帳號設定或啟用該帳號。<br>4.若以上回答無法為您解答，請電洽學生事務室04-22289111轉55142謝謝您。<br>" },
+            { title: "帳號無法登入", titleID: "q2", show: false, text: "1.原因可能是密碼輸入錯誤。<br>2.驗證碼輸入錯誤。<br>3.貴校管理者尚未將您的帳號設定或啟用該帳號。<br>4.若以上回答無法為您解答，請電洽學生事務室04-22289111轉55142謝謝您。<br>" },
+            { title: "帳號無法登入", titleID: "q3", show: false, text: "1.原因可能是密碼輸入錯誤。<br>2.驗證碼輸入錯誤。<br>3.貴校管理者尚未將您的帳號設定或啟用該帳號。<br>4.若以上回答無法為您解答，請電洽學生事務室04-22289111轉55142謝謝您。<br>" },
+            { title: "帳號無法登入", titleID: "q4", show: false, text: "1.原因可能是密碼輸入錯誤。<br>2.驗證碼輸入錯誤。<br>3.貴校管理者尚未將您的帳號設定或啟用該帳號。<br>4.若以上回答無法為您解答，請電洽學生事務室04-22289111轉55142謝謝您。<br>" }
+        ]
     },
     created() {
         //this.test();
-
-        if (window.location.href.indexOf('contactus') != "-1") {
-            alert('work');
-            drawPic();
+    },
+    mounted() {
+        if (this.nowUrl.indexOf('contactus') != "-1") {
+            this.drawPic();
         }
+        if (this.nowUrl.indexOf('login') != "-1") {
+            this.drawPic();
+        }
+        if (this.nowUrl.indexOf('register') != "-1") {
+            this.drawPic();
+        }
+
     },
     methods: {
         open(btn) {
@@ -86,49 +103,49 @@ var vm = new Vue({
 
         },
         mouseOver(id) {
-            if (id == "news") {
+            if (id == "news" && this.nowUrl.indexOf("index") == "-1") {
                 document.getElementById(id).src = "images/iconB_01.png";
             }
-            if (id == "activity") {
+            if (id == "activity" && this.nowUrl.indexOf("activity") == "-1") {
                 document.getElementById(id).src = "images/iconB_02.png";
             }
-            if (id == "register") {
+            if (id == "register" && this.nowUrl.indexOf("register") == "-1") {
                 document.getElementById(id).src = "images/iconB_03.png";
             }
-            if (id == "contactus") {
+            if (id == "contactus" && this.nowUrl.indexOf("contactus") == "-1") {
                 document.getElementById(id).src = "images/iconB_04.png";
             }
-            if (id == "question") {
+            if (id == "question" && this.nowUrl.indexOf("question") == "-1") {
                 document.getElementById(id).src = "images/iconB_05.png";
             }
-            if (id == "download") {
+            if (id == "download" && this.nowUrl.indexOf("download") == "-1") {
                 document.getElementById(id).src = "images/iconB_06.png";
             }
-            if (id == "login") {
+            if (id == "login" && this.nowUrl.indexOf("login") == "-1") {
                 document.getElementById(id).src = "images/iconB_07.png";
             }
 
         },
         mouseOut(id) {
-            if (id == "news") {
+            if (id == "news" && this.nowUrl.indexOf("index") == "-1") {
                 document.getElementById(id).src = "images/iconA_01.png";
             }
-            if (id == "activity") {
+            if (id == "activity" && this.nowUrl.indexOf("activity") == "-1") {
                 document.getElementById(id).src = "images/iconA_02.png";
             }
-            if (id == "register") {
+            if (id == "register" && this.nowUrl.indexOf("register") == "-1") {
                 document.getElementById(id).src = "images/iconA_03.png";
             }
-            if (id == "contactus") {
+            if (id == "contactus" && this.nowUrl.indexOf("contactus") == "-1") {
                 document.getElementById(id).src = "images/iconA_04.png";
             }
-            if (id == "question") {
+            if (id == "question" && this.nowUrl.indexOf("question") == "-1") {
                 document.getElementById(id).src = "images/iconA_05.png";
             }
-            if (id == "download") {
+            if (id == "download" && this.nowUrl.indexOf("download") == "-1") {
                 document.getElementById(id).src = "images/iconA_06.png";
             }
-            if (id == "login") {
+            if (id == "login" && this.nowUrl.indexOf("login") == "-1") {
                 document.getElementById(id).src = "images/iconA_07.png";
             }
 
@@ -168,9 +185,9 @@ var vm = new Vue({
         },
         //產生隨機顏色
         randomColor(min, max) {
-            var r = randomNum(min, max);
-            var g = randomNum(min, max);
-            var b = randomNum(min, max);
+            var r = this.randomNum(min, max);
+            var g = this.randomNum(min, max);
+            var b = this.randomNum(min, max);
             return "rgb(" + r + "," + g + "," + b + ")";
         },
         //產生驗證碼圖片
@@ -182,7 +199,7 @@ var vm = new Vue({
             ctx.textBaseline = 'bottom';
 
             //背景顏色
-            ctx.fillStyle = randomColor(180, 240); //顏色太深可能會看不清
+            ctx.fillStyle = this.randomColor(180, 240); //顏色太深可能會看不清
             ctx.fillRect(0, 0, width, height);
             //產生文字
 
@@ -191,18 +208,20 @@ var vm = new Vue({
             var str = '123456789';
 
             for (var i = 0; i < 4; i++) {
-                var txt = str[randomNum(0, str.length)];
-                ctx.fillStyle = randomColor(50, 160);  //隨機產生字體顏色
-                ctx.font = randomNum(15, 40) + 'px SimHei'; //隨機生成字體大小
+                var txt = str[this.randomNum(0, str.length)];
+                this.chk += txt;
+                ctx.fillStyle = this.randomColor(50, 160);  //隨機產生字體顏色
+                //ctx.font = this.randomNum(15, 40) + 'px SimHei'; //隨機生成字體大小
+                ctx.font = 25 + 'px SimHei'; //隨機生成字體大小
                 var x = 10 + i * 25;
-                var y = randomNum(25, 45);
-                var deg = randomNum(-45, 45);
+                var y = this.randomNum(25, 45);
+                var deg = this.randomNum(-45, 45);
                 //修改位置和角度
                 ctx.translate(x, y);
-                ctx.rotate(deg * Math.PI / 180);
+                //ctx.rotate(deg * Math.PI / 180);
                 ctx.fillText(txt, 0, 0);
                 //恢复位置和角度
-                ctx.rotate(-deg * Math.PI / 180);
+                //ctx.rotate(-deg * Math.PI / 180);
                 ctx.translate(-x, -y);
             }
 
@@ -221,6 +240,24 @@ var vm = new Vue({
             //     ctx.arc(randomNum(0, width), randomNum(0, height), 1, 0, 2 * Math.PI);
             //     ctx.fill();
             // }
+
+        },
+        //換圖片，重新記錄驗證碼
+        changeImg() {
+            this.chk = "";
+            this.drawPic();
+        },
+        //摺疊Card
+        collapse(item) {
+            if (item.show) {
+                $("#" + item.titleID).collapse('hide')
+                item.show = false;
+            }
+            else {
+                $("#" + item.titleID).collapse('show')
+                item.show = true;
+            }
+            //$(item.titleID).collapse('show')
 
         }
     }

@@ -46,7 +46,8 @@
                         @click="url('register')">
                         <img src="images/iconA_03.png" alt="register" id="register">
                     </a>
-                    <a href="javascript:void(0)" @click="url('login')">
+                    <a href="javascript:void(0)" @mouseover="mouseOver('login')" @mouseout="mouseOut('login')"
+                        @click="url('login')">
                         <img src="images/iconB_07.png" alt="login" id="login">
                     </a>
                     <span class="border-b w-100"></span>
@@ -70,6 +71,15 @@
                                 <option value="school">學校</option>
                                 <option value="center">中心</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h4 class="mb-3"><span class="red-star">*</span>圖形驗證碼：</h4>
+                        <div class="input-group" id="box">
+                            <input type="tel" class="form-control" placeholder="請輸入圖形驗證碼
+                                                    " />
+                            <span><canvas id="canvas" width="120" height="45"></canvas>
+                                <a href="javascript:void(0)" id="changeImg" @click="changeImg()">換一張?</a></span>
                         </div>
                     </div>
 
