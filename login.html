@@ -69,22 +69,21 @@
                             <h4 class="mb-3"><span class="red-star">*</span>身分選擇</h4>
                             <select class="custom-select d-block w-100" id="country" required>
                                 <option value="school">學校</option>
-                                <option value="center">中心</option>
+                                <option value="center">教育局</option>
                             </select>
                         </div>
                     </div>
                     <div class="mb-3">
                         <h4 class="mb-3"><span class="red-star">*</span>圖形驗證碼：</h4>
                         <div class="input-group" id="box">
-                            <input type="tel" class="form-control" placeholder="請輸入圖形驗證碼
-                                                    " />
+                            <input type="tel" class="form-control" placeholder="請輸入圖形驗證碼" v-model="txtchk" />
                             <span><canvas id="canvas" width="120" height="45"></canvas>
                                 <a href="javascript:void(0)" id="changeImg" @click="changeImg()">換一張?</a></span>
                         </div>
                     </div>
 
                     <button class="btn btn-lg btn-primary btn-block mt-4" type="submit"
-                        style="background-color:#1EA7C2 ; border-color:#1EA7C2;">登入</button>
+                        style="background-color:#1EA7C2 ; border-color:#1EA7C2;" @click="check()">登入</button>
                     <a class="mt-5" href="javascript:void(0)" v-on:click="url('register')">沒有帳號嗎? 點我註冊</a>
                 </form>
             </div>

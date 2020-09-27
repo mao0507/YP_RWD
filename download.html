@@ -35,11 +35,11 @@
           </a>
           <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')"
             @click="url('question')">
-            <img src="images/iconB_05.png" alt="question" id="question">
+            <img src="images/iconA_05.png" alt="question" id="question">
           </a>
           <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')"
             @click="url('download')">
-            <img src="images/iconA_06.png" alt="download" id="download">
+            <img src="images/iconB_06.png" alt="download" id="download">
           </a>
           <a href="javascript:void(0)" @mouseover="mouseOver('register')" @mouseout="mouseOut('register')"
             @click="url('register')">
@@ -52,10 +52,10 @@
           <span class="border-b w-100"></span>
         </div>
 
-        <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/5.png" alt="news">
+        <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/6.png" alt="download">
 
-        <div class="accordion">
-          <div class="card" v-for="item in questions">
+        <div class=" accordion">
+          <div class="card" v-for="item in download">
             <div class="card-header">
               <h2 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse"
@@ -67,7 +67,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">

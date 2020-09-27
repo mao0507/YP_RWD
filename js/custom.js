@@ -67,6 +67,13 @@ var vm = new Vue({
             { title: "帳號無法登入", titleID: "q2", show: false, text: "1.原因可能是密碼輸入錯誤。<br>2.驗證碼輸入錯誤。<br>3.貴校管理者尚未將您的帳號設定或啟用該帳號。<br>4.若以上回答無法為您解答，請電洽學生事務室04-22289111轉55142謝謝您。<br>" },
             { title: "帳號無法登入", titleID: "q3", show: false, text: "1.原因可能是密碼輸入錯誤。<br>2.驗證碼輸入錯誤。<br>3.貴校管理者尚未將您的帳號設定或啟用該帳號。<br>4.若以上回答無法為您解答，請電洽學生事務室04-22289111轉55142謝謝您。<br>" },
             { title: "帳號無法登入", titleID: "q4", show: false, text: "1.原因可能是密碼輸入錯誤。<br>2.驗證碼輸入錯誤。<br>3.貴校管理者尚未將您的帳號設定或啟用該帳號。<br>4.若以上回答無法為您解答，請電洽學生事務室04-22289111轉55142謝謝您。<br>" }
+        ],
+        download: [
+            { title: "本府各局處舉辦之活動", titleID: "d1", show: false, text: "<p><a href='javascript:void(0)'>本府活動明細總表 <img src='./images/excel.png' alt='EXCEL檔'>97KB</a></p>" },
+            { title: "年度計畫", titleID: "d2", show: false, text: "<p><a href='javascript:void(0)'>109年計畫 <img src='./images/word.png' alt='WORD檔'>22KB</a></p>" },
+            { title: "成果冊格式", titleID: "d3", show: false, text: "<p><a href='javascript:void(0)'>109年成果冊格式 <img src='./images/word.png' alt='WORD檔'>23KB</a></p>" },
+            { title: "系統操作手冊", titleID: "d4", show: false, text: "<p><a href='javascript:void(0)'>109年成果冊格式 <img src='./images/word.png' alt='WORD檔'>22916KB</a></p>" },
+            { title: "系統操作手冊", titleID: "d5", show: false, text: "<p><a href='javascript:void(0)'>高級中等學校代碼表 <img src='./images/excel.png' alt='EXCEL檔'>22916KB</a></p><p><a href='javascript:void(0)'>國民中學代碼表<img src='./images/excel.png' alt='EXCEL檔'>429KB</a></p><p><a href='javascript:void(0)'>國民小學代碼表<img src='./images/excel.png' alt='EXCEL檔'>1416KB</a></p><p><a href='javascript:void(0)'> 附設國中代碼表<img src='./images/excel.png' alt='EXCEL檔'>145KB</a></p>" },
         ]
     },
     created() {
@@ -82,7 +89,6 @@ var vm = new Vue({
         if (this.nowUrl.indexOf('register') != "-1") {
             this.drawPic();
         }
-
     },
     methods: {
         open(btn) {
@@ -248,17 +254,32 @@ var vm = new Vue({
             this.drawPic();
         },
         //摺疊Card
-        collapse(item) {
+        collapseCard(item) {
             if (item.show) {
                 $("#" + item.titleID).collapse('hide')
-                item.show = false;
+                $("#" + item.titleID).on('hidden.bs.collapse', function () {
+                    item.show = false;
+                })
             }
             else {
                 $("#" + item.titleID).collapse('show')
-                item.show = true;
+                //item.show = true;
+                $("#" + item.titleID).on('shown.bs.collapse	', function () {
+                    item.show = true;
+                })
             }
-            //$(item.titleID).collapse('show')
 
+        },
+        //驗證碼輸入檢查
+        check() {
+            if (this.chk == this.txtchk) {
+                alert("提交成功")
+                location.reload();
+            }
+            else {
+                alert("驗證碼錯誤")
+                this.txtchk = "";
+            }
         }
     }
 
