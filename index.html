@@ -21,42 +21,43 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class=" text-center">
+            <div class=" text-center bg pd-5">
                 <img class="d-block mx-auto img-fluid drop-shadow" src="images2/banner.gif">
             </div>
-            <div class="bg br drop-shadow ">
-                <div class="d-flex justify-content-between flex-wrap">
-                    <a href="javascript:void(0)">
-                        <img src="images/iconB_01.png" alt="news" id="news" @mouseover="mouseOver('news')"
-                            @mouseout="mouseOut('news')" @click="url('news')">
-                    </a>
-                    <a href="javascript:void(0)" @mouseover="mouseOver('activity')" @mouseout="mouseOut('activity')"
-                        @click="url('activity')">
-                        <img src="images/iconA_02.png" alt="activity" id="activity">
-                    </a>
+            <div class="d-flex justify-content-between flex-wrap bg-b pd-5">
+                <a href="javascript:void(0)">
+                    <img src="images/iconB_01.png" alt="news" id="news" @mouseover="mouseOver('news')"
+                        @mouseout="mouseOut('news')" @click="url('news')">
+                </a>
+                <a href="javascript:void(0)" @mouseover="mouseOver('activity')" @mouseout="mouseOut('activity')"
+                    @click="url('activity')">
+                    <img src="images/iconA_02.png" alt="activity" id="activity">
+                </a>
 
-                    <a href="javascript:void(0)" @mouseover="mouseOver('contactus')" @mouseout="mouseOut('contactus')"
-                        @click="url('contactus')">
-                        <img src="images/iconA_04.png" alt="contactus" id="contactus">
-                    </a>
-                    <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')"
-                        @click="url('question')">
-                        <img src="images/iconA_05.png" alt="question" id="question">
-                    </a>
-                    <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')"
-                        @click="url('download')">
-                        <img src="images/iconA_06.png" alt="download" id="download">
-                    </a>
-                    <a href="javascript:void(0)" @mouseover="mouseOver('register')" @mouseout="mouseOut('register')"
-                        @click="url('register')">
-                        <img src="images/iconA_03.png" alt="register" id="register">
-                    </a>
-                    <a href="javascript:void(0)" @mouseover="mouseOver('login')" @mouseout="mouseOut('login')"
-                        @click="url('login')">
-                        <img src="images/iconA_07.png" alt="login" id="login">
-                    </a>
-                    <span class="border-b w-100"></span>
-                </div>
+                <a href="javascript:void(0)" @mouseover="mouseOver('contactus')" @mouseout="mouseOut('contactus')"
+                    @click="url('contactus')">
+                    <img src="images/iconA_04.png" alt="contactus" id="contactus">
+                </a>
+                <a href="javascript:void(0)" @mouseover="mouseOver('question')" @mouseout="mouseOut('question')"
+                    @click="url('question')">
+                    <img src="images/iconA_05.png" alt="question" id="question">
+                </a>
+                <a href="javascript:void(0)" @mouseover="mouseOver('download')" @mouseout="mouseOut('download')"
+                    @click="url('download')">
+                    <img src="images/iconA_06.png" alt="download" id="download">
+                </a>
+                <a href="javascript:void(0)" @mouseover="mouseOver('register')" @mouseout="mouseOut('register')"
+                    @click="url('register')">
+                    <img src="images/iconA_03.png" alt="register" id="register">
+                </a>
+                <a href="javascript:void(0)" @mouseover="mouseOver('login')" @mouseout="mouseOut('login')"
+                    @click="url('login')">
+                    <img src="images/iconA_07.png" alt="login" id="login">
+                </a>
+                <span class="border-b w-100"></span>
+            </div>
+            <div class="bg br drop-shadow pd-50 ">
+
                 <table class="table table-hover table-striped ">
                     <img class="img-fluid rounded mx-auto d-block mb-5 mt-5" src="images2/1.png" alt="news">
                     <thead class="text-center">

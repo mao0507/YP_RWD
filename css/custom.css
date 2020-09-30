@@ -16,7 +16,15 @@ body {
 .bg {
     background-color: white;
     /* border: black solid 1px; */
-    padding: 50px 50px 50px 50px;
+}
+.pd-5 {
+    padding: 5px 5px 0px 5px;
+}
+.pd-50 {
+    padding: 10px 50px 50px 50px;
+}
+.bg-b {
+    background-color: #ffedd4;
 }
 /* .br {
     border-radius: 50px;
