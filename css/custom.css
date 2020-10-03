@@ -1,7 +1,7 @@
 body {
     background-color: #bfb487;
     background-repeat: no-repeat;
-    background-image: url(../images/BK.png);
+    /* background-image: url(../images2/banner/banner.gif); */
 }
 
 .flex-wrap {
@@ -46,4 +46,8 @@ body {
 
 #box {
     margin-top: 1.5%;
+}
+
+.mb-300 {
+    margin-bottom: 300px;
 }
